@@ -32,3 +32,20 @@ class TrzeciaKlasa(DrugaKlasa):
 
     def suma_elementow(self):
         return self.a + self.b + self.c + self.d
+    
+    
+pk = PierwszaKlasa(3,7)
+dk = DrugaKlasa(1,6,9)
+tk=TrzeciaKlasa(2,3,1,8)
+
+print("___________ PierwszaKlasa __________")
+pk.print_ab()
+print("___________ DrugaKlasa __________")
+dk.print_ab()
+dk.print_abc()
+print(dk.suma_elementow())
+print("___________ TrzeciaKlasa __________")
+tk.print_ab()
+tk.print_abc()
+tk.print_abcd()
+print(tk.suma_elementow())
