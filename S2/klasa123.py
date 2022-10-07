@@ -19,3 +19,16 @@ class DrugaKlasa(PierwszaKlasa):
         
     def suma_elementow(self):
         return self.a + self.b + self.c
+    
+    
+class TrzeciaKlasa(DrugaKlasa):
+
+    def __init__(self,a,b,c,d):
+        super().__init__(a,b,c)
+        self.d=d
+        
+    def print_abcd(self):
+        print(f"a = {self.a}, b = {self.b}, c = {self.c}, d={self.d}")
+
+    def suma_elementow(self):
+        return self.a + self.b + self.c + self.d
