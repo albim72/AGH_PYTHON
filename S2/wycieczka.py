@@ -13,3 +13,21 @@ def kwota(t,nw,w,u,i,rab=0):
 print(f"{kwota(100,100,50,50,50):.2f} zł")
 print(f"{kwota(100,100,50,50,50,25):.2f} zł")
 print(f"{kwota(100,100,50,50,50,75)} zł")
+
+wynik = []
+for r in rabs:
+    kw = kwota (1700, 1230, 450, 200, 180, r)
+
+    if r == 0:
+        print (f"cena bazowa do zapłaty wynosi: {kw} zł")
+
+    else:
+        print (f"dla rabatu: {r}%, kwota do zapłaty wynosi: {kw} zł")
+
+    wynik.append(kw)
+
+
+print (wynik)
+
+result = [kwota(1700,1230,450,200,180,r) for r in rabs]
+print(result)
