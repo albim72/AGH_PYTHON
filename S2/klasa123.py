@@ -20,6 +20,15 @@ class DrugaKlasa(PierwszaKlasa):
     def suma_elementow(self):
         return self.a + self.b + self.c
     
+class SpecjalnaKlasa:
+    
+    def __init__(self,g,h):
+        self.g = 2*g
+        self.h = h**2
+    
+    def ghx(self):
+        return (self.g+self.h)/2
+    
     
 class TrzeciaKlasa(DrugaKlasa):
 
