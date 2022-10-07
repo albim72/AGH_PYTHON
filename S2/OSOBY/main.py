@@ -39,3 +39,16 @@ st2.print_student()
 st2.print_pracownik()
 print(f"wiek za 10 lat: {st2.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({st2.czypracownik()})")
+
+#stwórz obiekt st3 klasy Student, który nie jest pracowmnikiem ale jest sportowcem
+
+print("___________________________________________________")
+
+st3 = Student("Robert",22,178,80,323424,"Budowlany","Budowa i konstrukcja mostów",3,dyscyplina="biegi ultra",
+              lata_upr=5, best_wynik="102km 18godz 56min 23s")
+
+st3.print_osoba()
+st3.print_student()
+st3.infosport()
+print(f"wiek za 10 lat: {st3.wiekza10lat()}")
+print(f"Czy osoba jest pracownikiem? ({st3.czypracownik()})")
