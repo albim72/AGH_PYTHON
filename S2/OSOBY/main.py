@@ -1,9 +1,12 @@
 from osoba import Osoba
+from pracownik import Pracownik
+from student import Student
 
 os1 = Osoba("Jan",66,176,104)
 os1.print_osoba()
 print(f"wiek za 10 lat: {os1.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({os1.czypracownik()})")
+print(f"współczynnik bmi wynosi: {os1.bmi():.2f}, opis: {os1.opis_bmi()}")
 
 print("___________________________________________________")
 
@@ -20,6 +23,7 @@ pr1.print_osoba()
 pr1.print_pracownik()
 print(f"wiek za 10 lat: {pr1.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({pr1.czypracownik()})")
+print(f"współczynnik bmi wynosi: {pr1.bmi():.2f}, opis: {pr1.opis_bmi()}")
 
 print("___________________________________________________")
 
@@ -52,3 +56,4 @@ st3.print_student()
 st3.infosport()
 print(f"wiek za 10 lat: {st3.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({st3.czypracownik()})")
+print(f"współczynnik bmi wynosi: {st3.bmi():.2f}, opis: {st3.opis_bmi()}")
