@@ -1,6 +1,7 @@
-#import dane
-#import dane as dn
-from dane import book
+import math
 
-print(book)
-print(book["autor"])
+def konferencja(nazwa,miejsce,data):
+    print(f"Konferncja: {nazwa} {miejsce} {data}")
+
+def gx(n,m):
+    return n*math.exp(m-2)
