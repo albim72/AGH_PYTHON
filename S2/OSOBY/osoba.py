@@ -34,3 +34,11 @@ class Osoba:
             return "nadwaga"
         else:
             return "otyłość"
+        
+    def policz_ppm(self,plec):
+        if plec == "k":
+            return 655.1 + 9.563*self.waga+1.85*self.wzrost-4.676*self.wiek
+        elif plec == "m":
+            return 66.5 + 13.75 * self.waga + 5.003 * self.wzrost - 6.775 * self.wiek
+        else:
+            return "podaj k lub m"
