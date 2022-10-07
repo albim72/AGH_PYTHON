@@ -1,0 +1,2 @@
+class Pusta:
+    pass
