@@ -7,6 +7,7 @@ os1.print_osoba()
 print(f"wiek za 10 lat: {os1.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({os1.czypracownik()})")
 print(f"współczynnik bmi wynosi: {os1.bmi():.2f}, opis: {os1.opis_bmi()}")
+print(f"zapotrzebowanie energetyczne -> {os1.policz_ppm('m')} kcal")
 
 print("___________________________________________________")
 
@@ -24,6 +25,7 @@ pr1.print_pracownik()
 print(f"wiek za 10 lat: {pr1.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({pr1.czypracownik()})")
 print(f"współczynnik bmi wynosi: {pr1.bmi():.2f}, opis: {pr1.opis_bmi()}")
+print(f"zapotrzebowanie energetyczne -> {pr1.policz_ppm('m')} kcal")
 
 print("___________________________________________________")
 
@@ -34,6 +36,7 @@ st1.print_student()
 print(f"wiek za 10 lat: {st1.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({st1.czypracownik()})")
 
+
 print("___________________________________________________")
 
 st2 = Student("Anna",23,170,58,987777,"Nauk Społecznych","Socjologia",4,"XYZ","sekretarka",1,2400)
@@ -43,6 +46,7 @@ st2.print_student()
 st2.print_pracownik()
 print(f"wiek za 10 lat: {st2.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({st2.czypracownik()})")
+print(f"zapotrzebowanie energetyczne -> {st2.policz_ppm('k')} kcal")
 
 #stwórz obiekt st3 klasy Student, który nie jest pracowmnikiem ale jest sportowcem
 
@@ -57,5 +61,4 @@ st3.infosport()
 print(f"wiek za 10 lat: {st3.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({st3.czypracownik()})")
 print(f"współczynnik bmi wynosi: {st3.bmi():.2f}, opis: {st3.opis_bmi()}")
-
-
+print(f"zapotrzebowanie energetyczne -> {st3.policz_ppm('m'):.2f} kcal")
