@@ -57,3 +57,5 @@ st3.infosport()
 print(f"wiek za 10 lat: {st3.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({st3.czypracownik()})")
 print(f"współczynnik bmi wynosi: {st3.bmi():.2f}, opis: {st3.opis_bmi()}")
+
+
