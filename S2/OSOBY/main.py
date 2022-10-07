@@ -20,3 +20,22 @@ pr1.print_osoba()
 pr1.print_pracownik()
 print(f"wiek za 10 lat: {pr1.wiekza10lat()}")
 print(f"Czy osoba jest pracownikiem? ({pr1.czypracownik()})")
+
+print("___________________________________________________")
+
+st1 = Student("Olaf",22,177,77,756545,"Automatyki, Elektroniki i Informatyki","Informatyka",3)
+
+st1.print_osoba()
+st1.print_student()
+print(f"wiek za 10 lat: {st1.wiekza10lat()}")
+print(f"Czy osoba jest pracownikiem? ({st1.czypracownik()})")
+
+print("___________________________________________________")
+
+st2 = Student("Anna",23,170,58,987777,"Nauk Społecznych","Socjologia",4,"XYZ","sekretarka",1,2400)
+
+st2.print_osoba()
+st2.print_student()
+st2.print_pracownik()
+print(f"wiek za 10 lat: {st2.wiekza10lat()}")
+print(f"Czy osoba jest pracownikiem? ({st2.czypracownik()})")
