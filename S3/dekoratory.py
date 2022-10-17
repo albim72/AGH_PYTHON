@@ -57,3 +57,17 @@ def suma_z_listy():
     sum([i**2 for i in range(1000000)])
 
 suma_z_listy()
+
+
+#przypadek 3
+
+def debug(funkcja):
+    def wrapper():
+        print(f"wywołanie funkcji: {funkcja.__name__}")
+    return wrapper
+
+@debug
+def takietam(r):
+    return r
+
+takietam(3)
