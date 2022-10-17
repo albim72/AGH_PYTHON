@@ -35,3 +35,28 @@ def gratulacje(jesli):
 print(gratulacje("tak")(2))
 print(gratulacje("nie")())
 print(gratulacje("aaaaaa")())
+
+
+#przykład 3
+
+def startstop(funkcja):
+
+    def wrapper():
+        print("start procesu...")
+        funkcja()
+        print("kończenie procesu....")
+    return wrapper
+
+def zawijanie():
+    print("Zawijanie czekoladek w sreberka....")
+
+
+roll = startstop(zawijanie)
+roll()
+
+#dekorator -> funkcja dekorująca, funckcja która definiuje kształt drugiej funckji
+@startstop
+def dmuchanie():
+    print("dmuchanie baloników na urodziny...")
+
+dmuchanie()
