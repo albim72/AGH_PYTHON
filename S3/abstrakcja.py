@@ -34,3 +34,8 @@ class ZwKlasa(Prototyp):
 
 
 z = ZwKlasa(4,3)
+
+z.info()
+print(z.message("kod -> 96789634859834"))
+print(f"wynik zwracany przez metodę policz -> {z.policz()}")
+print(f"wynik zwracany przez metodę policz_x -> {z.policz_x()}")
