@@ -1,8 +1,10 @@
 from pojazd import Pojazd
 
-p1 = Pojazd()
+p1 = Pojazd("Jeep","Cherokee",2019,4.6)
 lt = float(input("podaj liczbę spalonych litrów paliwa: "))
 odl = float(input("podaj przejechaną odległość: "))
 cena_l = float(input("poda cenę za l paliwa: "))
+
 print(f"spalanie [l/100km]: {p1.spalanie_100(lt,odl):.2f}")
 print(f"koszt przejazdu na trasie: {odl}km wynosi: {p1.kosztyprzejazdu(lt,odl,cena_l):.2f} zł")
+print(p1.info_car())
