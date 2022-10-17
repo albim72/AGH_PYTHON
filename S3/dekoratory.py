@@ -71,3 +71,19 @@ def takietam(r):
     return r
 
 takietam(3)
+
+
+#przypadek 4
+def repeat(n):
+    def wrapper(funkcja):
+        def inner(*args):
+            for i in range(n):
+                funkcja(*args)
+        return inner
+    return wrapper
+
+@repeat(n=5)
+def policz(c,d):
+    print(f"wartość = {c*d**2}")
+
+policz(3,6)
