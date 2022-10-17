@@ -36,3 +36,24 @@ def suma_z_listy_2(lista):
     sum(lista)
 
 suma_z_listy_2(lt)
+
+#przypadek 2
+
+def sleep(funkcja):
+    def wrapper():
+        time.sleep(8)
+        return funkcja()
+    return wrapper
+
+@sleep
+def info():
+    print("komunikat po 8 sekunadach!")
+
+info()
+
+@sleep
+@pomiarczasu_
+def suma_z_listy():
+    sum([i**2 for i in range(1000000)])
+
+suma_z_listy()
