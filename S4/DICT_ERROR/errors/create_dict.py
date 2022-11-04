@@ -1,21 +1,26 @@
-class IntFloatValueError(Exception):
+from errors.dane_error import IntFloatValueError, KeyValueContructError
 
-    def __init__(self,value):
-        self.value = value
+class CustomDict(dict):
 
-    def __str__(self):
-        return f'{self.value} jest niewłaściwą wartością. ' \
-               f'Słownik może zawierać tylko wartości typu: int i float'
+    empty_dict = []
+
+    def __init__(self, key=None, value = None):
+        if key is None or value is None:
+            self.get_dict()
+        elif not isinstance(key,(tuple,list,)) or not isinstance(value,(tuple,list)):
+            raise KeyValueContructError(key,value)
+        else:
+            zipped = zip(key,value)
+            for k,val in zipped:
+                if not isinstance(val,(int,float)):
+                    raise IntFloatValueError(val)
+                dict.__setitem__(self,k,val)
+
+    def get_dict(self):
+        return self.empty_dict
 
 
-class KeyValueContructError(Exception):
-
-    def __init__(self, key, value):
-        self.key = key
-        self.value = value
-
-
-    def __str__(self):
-        return f'klucze i wartości mogą pochodzić tylko z kolekcji: list albo tuple.' \
-               f'Aktualnie klucz posiada wartość: {self.key} w typie {type(self.key)}, ' \
-               f'a wartość słownika posiada wartość: {self.value} w typie {type(self.value)}'
+    def __setitem__(self, key, value):
+        if not isinstance(value,(int,float)):
+            raise IntFloatValueError(value)
+        return dict.__setitem__(self,key,value)
