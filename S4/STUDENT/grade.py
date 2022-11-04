@@ -9,7 +9,7 @@ class Grade:
     def __set__(self, instance, value):
         if not (0 <= value <= 100):
             raise ValueError('ocena musi być z zakresu od 0 do 100')
-        self._grade = value
+        self._value = value
 
 
 class Exam:
