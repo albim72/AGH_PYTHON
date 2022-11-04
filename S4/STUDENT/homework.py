@@ -9,6 +9,6 @@ class HomeWork:
 
     @grade.setter
     def grade(self,value):
-        if (0<=value<=100):
+        if not (0<=value<=100):
             raise ValueError('ocena musi być z zakresu od 0 do 100')
         self._grade = value
