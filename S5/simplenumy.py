@@ -53,3 +53,12 @@ print(a)
 
 b= a.reshape(2,3)
 print(b)
+
+dane = np.arange(1,99,3)
+print(dane)
+
+print(dane[2:11])
+
+print(dane[:6])
+
+print(dane[-2])
