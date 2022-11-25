@@ -26,10 +26,10 @@ cena.text = "52000"
 
 wyp_dod = SubElement(sam1,"wyposazenie_dod")
 
-kolor = SubElement(sam1,"kolor")
+kolor = SubElement(wyp_dod,"kolor")
 kolor.text = "czarna perła"
 
-klima = SubElement(sam1,"klimatyzacja")
+klima = SubElement(wyp_dod,"klimatyzacja")
 cena.text = "RTG56345"
 
 #drugi samochód
@@ -56,8 +56,10 @@ cena.text = "121000"
 
 wyp_dod = SubElement(sam2,"wyposazenie_dod")
 
-kolor = SubElement(sam1,"kolor")
+kolor = SubElement(wyp_dod,"kolor")
 kolor.text = "czerwony metallic"
 
-pod = SubElement(sam1,"poduszki")
+pod = SubElement(wyp_dod,"poduszki")
 pod.text = "3"
+
+print(pretty(top))
