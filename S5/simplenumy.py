@@ -63,3 +63,14 @@ print(dane[:6])
 
 print(dane[-2])
 print(dane[2:15:5])
+
+m = np.array([[67,8,9,12],[2,3,5,8],[11,44,3,6]])
+print(m)
+
+print(m[m<9])
+
+pc = (m>=10)
+print(m[pc])
+
+parzyste = m[m%2==0]
+print(parzyste)
