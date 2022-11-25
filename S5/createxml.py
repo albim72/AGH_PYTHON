@@ -16,7 +16,7 @@ model = SubElement(sam1,"model")
 model.text = "Impreza"
 
 poj = SubElement(sam1,"pojemnosc")
-id.text = "2.0"
+poj.text = "2.0"
 
 rocznik = SubElement(sam1,"rocznik")
 rocznik.text = "1999"
@@ -30,7 +30,7 @@ kolor = SubElement(wyp_dod,"kolor")
 kolor.text = "czarna perła"
 
 klima = SubElement(wyp_dod,"klimatyzacja")
-cena.text = "RTG56345"
+klima.text = "RTG56345"
 
 #drugi samochód
 
@@ -46,7 +46,7 @@ model = SubElement(sam2,"model")
 model.text = "Outback"
 
 poj = SubElement(sam2,"pojemnosc")
-id.text = "2.4"
+poj.text = "2.4"
 
 rocznik = SubElement(sam2,"rocznik")
 rocznik.text = "2018"
