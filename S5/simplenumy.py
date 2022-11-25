@@ -33,3 +33,10 @@ print(a)
 
 a = np.array([7,2,5,16,9,11,-5,0,123,-44,19])
 print(np.sort(a))
+
+a = np.array([2,4,8,9])
+b = np.array([1,6,11,34,67])
+
+w = np.concatenate((a,b))
+print(w)
+print(np.sort(w))
