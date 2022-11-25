@@ -63,3 +63,7 @@ pod = SubElement(wyp_dod,"poduszki")
 pod.text = "3"
 
 print(pretty(top))
+
+with open("subaru.xml","a",encoding="utf-8") as f:
+    f.write(pretty(top))
+
