@@ -122,4 +122,14 @@ print("______________________________")
 dzm = y/x
 print(dzm)
 
+bm = x*1.65
+print(bm)
 
+randm = np.random.random(12)
+print(randm)
+
+rm = np.random.randn(3,6)
+print(rm)
+
+print(rm.min())
+print(rm.max())
