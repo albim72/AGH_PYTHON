@@ -17,13 +17,25 @@ class Akwizytor:
     def imie(self):
         return self._imie
 
+    @imie.setter
+    def imie(self,imie):
+        self._imie = imie
+
     @property
     def nazwisko(self):
         return self._nazwisko
 
+    @imie.setter
+    def nazwisko(self, nazwisko):
+        self._nazwisko = nazwisko
+
     @property
     def nr_bezpieczenia(self):
         return self._nr_bezpieczenia
+
+    @imie.setter
+    def nr_bezpieczenia(self, nr_bezpieczenia):
+        self._nr_bezpieczenia = nr_bezpieczenia
 
     @property
     def sprzedaz(self):
@@ -49,11 +61,11 @@ class Akwizytor:
 
     def zarobek(self):
         return self.sprzedaz*(self.prowizja/Decimal('100.0'))
-    
+
     def __repr__(self):
         """
         reprezentacja tesktowa obiektu
         """
-        
+
         return (f"Akwizytor: {self.imie} {self.nazwisko}\nnumer ubezpieczenia: {self.nr_bezpieczenia}\n"
                 f"sprzedaż: {self.sprzedaz:.2f}\nprowizja: {self.prowizja:.2f}%")
