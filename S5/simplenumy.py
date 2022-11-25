@@ -74,3 +74,14 @@ print(m[pc])
 
 parzyste = m[m%2==0]
 print(parzyste)
+
+pc = (m >11) | (m==44)
+print(pc)
+
+a = np.array([1,2,3,4,8,9,12,16,20,25])
+print(a)
+
+aw = a[2:7]
+print(aw)
+print(type(a))
+print(type(aw))
