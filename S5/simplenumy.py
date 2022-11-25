@@ -9,3 +9,25 @@ print(a)
 
 mc = np.array([[4,6,1],[67,8,9],[-23,0,7]])
 print(mc)
+
+
+print(mc[0])
+
+z = np.zeros(6)
+print(z)
+
+j = np.ones(8)
+print(j)
+
+e = np.empty(10)
+print(e)
+
+a = np.arange(7)
+print(a)
+
+a = np.arange(2,18,2)
+print(a)
+
+a = np.linspace(0,10,num=5)
+print(a)
+
