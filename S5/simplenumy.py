@@ -85,3 +85,13 @@ aw = a[2:7]
 print(aw)
 print(type(a))
 print(type(aw))
+
+a1 = np.array([[1,1,2],[3,3,2],[4,7,1]])
+a2 = np.array([[2,2,5],[7,7,2],[1,89,1]])
+a3 = np.array([[5,5,1],[12,17,5],[8,1,1]])
+
+ver = np.vstack((a1,a2,a3))
+print(ver)
+print("__________________")
+hor = np.hstack((a1,a2,a3))
+print(hor)
