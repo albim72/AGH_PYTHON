@@ -40,3 +40,16 @@ b = np.array([1,6,11,34,67])
 w = np.concatenate((a,b))
 print(w)
 print(np.sort(w))
+
+x = np.array([[1,4],[7,8]])
+y = np.array([[5,6],[3,9]])
+
+
+u = np.concatenate((x,y),axis=0)
+print(u)
+
+a = np.arange(6)
+print(a)
+
+b= a.reshape(2,3)
+print(b)
