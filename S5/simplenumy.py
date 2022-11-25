@@ -62,3 +62,4 @@ print(dane[2:11])
 print(dane[:6])
 
 print(dane[-2])
+print(dane[2:15:5])
