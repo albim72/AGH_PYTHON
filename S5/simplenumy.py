@@ -31,3 +31,5 @@ print(a)
 a = np.linspace(0,10,num=5)
 print(a)
 
+a = np.array([7,2,5,16,9,11,-5,0,123,-44,19])
+print(np.sort(a))
