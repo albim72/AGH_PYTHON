@@ -95,3 +95,31 @@ print(ver)
 print("__________________")
 hor = np.hstack((a1,a2,a3))
 print(hor)
+
+x = np.arange(1,25).reshape(4,6)
+print(x)
+
+x = np.arange(3,7).reshape(2,2)
+print(x)
+y = np.ones(4).reshape(2,2)
+print(y)
+
+#dodawanie macierzy
+dm = x+y
+print(dm)
+print("______________________________")
+#odejmowanie macierzy
+om = x-y
+print(om)
+
+print("______________________________")
+#mnożenie macierzy
+mm = x*y
+print(mm)
+
+print("______________________________")
+#mnożenie macierzy
+dzm = y/x
+print(dzm)
+
+
