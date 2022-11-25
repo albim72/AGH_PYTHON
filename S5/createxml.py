@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 from prettyfy import pretty
 
 top = Element("autokomis")
+
 sam1 = SubElement(top,"samochod")
 
 id = SubElement(sam1,"id")
@@ -30,3 +31,33 @@ kolor.text = "czarna perła"
 
 klima = SubElement(sam1,"klimatyzacja")
 cena.text = "RTG56345"
+
+#drugi samochód
+
+sam2 = SubElement(top,"samochod")
+
+id = SubElement(sam2,"id")
+id.text = "sam2"
+
+marka = SubElement(sam2,"marka")
+marka.text = "Subaru"
+
+model = SubElement(sam2,"model")
+model.text = "Outback"
+
+poj = SubElement(sam2,"pojemnosc")
+id.text = "2.4"
+
+rocznik = SubElement(sam2,"rocznik")
+rocznik.text = "2018"
+
+cena = SubElement(sam2,"cena")
+cena.text = "121000"
+
+wyp_dod = SubElement(sam2,"wyposazenie_dod")
+
+kolor = SubElement(sam1,"kolor")
+kolor.text = "czerwony metallic"
+
+pod = SubElement(sam1,"poduszki")
+pod.text = "3"
