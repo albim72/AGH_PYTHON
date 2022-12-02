@@ -32,3 +32,20 @@ bucket = Bucket(60)
 fill(bucket,100)
 print(bucket)
 
+if deduct(bucket,99):
+    print('potrzebne 99 jednostek danych')
+else:
+    print('nie ma 99 jednostek')
+print(bucket)
+
+if deduct(bucket,3):
+    print('potrzebne 3 jednostki danych')
+else:
+    print('nie ma 3 jednostek danych')
+print(bucket)
+print("***************************************")
+print("nowe spojrzenie na wiadro....")
+
+
+
+
