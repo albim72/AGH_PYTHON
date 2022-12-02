@@ -10,44 +10,23 @@ def create_connection(db_file):
         print(a)
     return conn
 
-def create_table(conn,create_table_sql):
-    try:
-        c = conn.cursor()
-        c.execute(create_table_sql)
-    except Error as e:
-        print(e)
+def create_project(conn,project):
+    sql = """
+    INSERT INTO projects(name,begin_date,end_date) VALUES(?,?,?)
+    """
+    
+    cur = conn.cursor()
+    cur.execute(sql,project)
+    conn.commit()
+    return cur.lastrowid
 
-def main():
-    database = r"c:\sqlite\db\ptyhoncqlite.db"
 
-    sql_create_projects_table = """
-    CREATE TABLE IF NOT EXISTS projects(
-    id integer PRIMARY KEY,
-    name text NOT NULL,
-    begin_date text,
-    end_date text
-    );
+def create_task(conn,task):
+    sql = """
+    INSERT INTO tasks(name,priority,status_id,project_id,begin_date,end_date) VALUES(?,?,?,?,?,?)
     """
 
-    sql_create_tasks_table = """
-    CREATE TABLE IF NOT EXISTS tasks(
-    id integer PRIMARY KEY,
-    name text NOT NULL,
-    priority integer,
-    status_id integer NOT NULL,
-    project_id integer NOT NULL,
-    begin_date text,
-    end_date text,
-    FOREIGN KEY (project_id) REFERENCES projects(id)
-    );
-    """
-
-    conn = create_connection(database)
-    if conn is not None:
-        create_table(conn,sql_create_projects_table)
-        create_table(conn,sql_create_tasks_table)
-    else:
-        print("Błąd! nie można utworzyć połączenia z bazą!")
-
-if __name__ == '__main__':
-    main()
+    cur = conn.cursor()
+    cur.execute(sql, task)
+    conn.commit()
+    return cur.lastrowid
