@@ -18,7 +18,7 @@ class AkwizytorNaEtacie(Akwizytor):
     def pensja(self,kwota):
         if kwota <Decimal('0.00'):
             raise ValueError('wyngrodzenie ryczałtowe nie może być ujemne')
-        self._pesja = kwota
+        self._pensja = kwota
 
     def zrobek(self):
         return super().zrobek() + self.pensja
