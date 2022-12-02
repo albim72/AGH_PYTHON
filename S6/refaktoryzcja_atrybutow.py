@@ -83,3 +83,15 @@ print(f"początkowo {bucket}")
 fill(bucket,100)
 print(f'wypełniono: {bucket}')
 
+if deduct(bucket,99):
+    print('potrzebne 99 jednostek danych')
+else:
+    print('nie ma 99 jednostek')
+print(f'teraz: {bucket}')
+
+if deduct(bucket,3):
+    print('potrzeba 3 jednostki danych')
+else:
+    print('nie ma 3 jednostek')
+
+print(f'pozostało: {bucket}')
