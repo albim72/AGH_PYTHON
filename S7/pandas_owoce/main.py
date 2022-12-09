@@ -17,3 +17,8 @@ print(dane.loc['Jasio'])
 
 dane.to_csv('owocki.csv')
 print(dane.info())
+
+dane.to_html('owoc.html')
+
+dtosoby = pd.read_csv("osoby.csv")
+print(dtosoby)
