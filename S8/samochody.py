@@ -128,3 +128,5 @@ def build_and_compile(norm):
         loss = 'mean_absolute_error'
     )
     return model
+dnn_hp_model = build_and_compile(horspower_normalizer)
+dnn_hp_model.summary()
