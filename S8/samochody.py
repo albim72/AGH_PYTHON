@@ -59,3 +59,7 @@ horsepower_model = tf.keras.Sequential([
 
 horsepower_model.summary()
 horsepower_model.predict(horsepower[:10])
+horsepower_model.compile(
+    optimizer = tf.optimizers.Adam(learning_rate=0.1),
+    loss = 'mean_absolute_error'
+)
