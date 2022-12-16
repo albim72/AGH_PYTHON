@@ -71,3 +71,6 @@ history = horsepower_model.fit(
     verbose=0,
     validation_split = 0.2
 )
+hist = pd.DataFrame(history.history)
+hist['epoch'] = history.epoch
+hist.tail()
