@@ -12,3 +12,9 @@ features = ['sepal length','sepal width','petal length','petal width']
 x = df.loc[:,features].values
 y = df.loc[:,['target']].values
 x = StandardScaler().fit_transform(x)
+
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+principalComponents = pca.fit_transform(x)
+principalDf = pd.DataFrame(data=principalComponents, columns=['principal component 1', 'principal component 2'])
+finalDf = pd.concat([principalDf,df[['target']]],axis=1)
