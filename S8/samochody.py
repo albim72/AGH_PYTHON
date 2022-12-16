@@ -139,3 +139,4 @@ history = dnn_hp_model.fit(
     verbose=0,
     validation_split = 0.2
 )
+plot_loss(history)
