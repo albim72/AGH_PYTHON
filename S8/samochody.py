@@ -19,3 +19,5 @@ dataset = raw_dataset.copy()
 dataset.tail()
 
 dataset.isna().sum()
+
+dataset = dataset.dropna()
