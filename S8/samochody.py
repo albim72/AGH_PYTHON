@@ -91,3 +91,14 @@ test_results['horsepower_model'] = horsepower_model.evaluate(
 )
 x = tf.linspace(0.0,250,251)
 y = horsepower_model.predict(x)
+
+def plot_horsepower(x,y):
+    plt.scatter(train_features['Horsepower'],train_labels,label='Data')
+    plt.plot(x,y,color='k',label='Predictions')
+    plt.xlabel('Horsepower')
+    plt.ylabel('MPG')
+    plt.legend()
+    
+plot_horsepower(x,y)
+
+
