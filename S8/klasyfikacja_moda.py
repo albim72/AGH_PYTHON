@@ -43,3 +43,8 @@ model.compile(optimizer='adam',
 model.fit(train_images,train_labels,epochs=10)
 test_loss, test_acc = model.evaluate(test_images,test_labels,verbose=2)
 print(f"\ndokładność modelu: {test_acc}")
+
+#prognozowanie
+probability_model = tf.keras.Sequential([model,tf.keras.layers.Softmax()])
+predictions = probability_model.predict(test_images)
+predictions[0]
