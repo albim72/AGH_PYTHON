@@ -109,3 +109,7 @@ linear_model = tf.keras.Sequential([
 
 linear_model.predict(train_features[:10])
 linear_model.layers[1].kernel
+linear_model.compile(
+    optimizer = tf.optimizers.Adam(learning_rate=0.1),
+    loss = 'mean_absolute_error'
+)
