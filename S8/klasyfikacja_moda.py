@@ -51,3 +51,19 @@ predictions[0]
 
 np.argmax(predictions[0])
 test_labels[0]
+
+
+def plot_image(i,predictions_array,true_label,img):
+    true_label,img = true_label[i],img[i]
+    plt.grid(False)
+    plt.xticks([])
+    plt.yticks([])
+    plt.imshow(img,cmap=plt.cm.binary)
+
+    predicted_label = np.argmax(predictions_array)
+    if predicted_label == true_label:
+        color = 'blue'
+    else:
+        color = 'red'
+    plt.xlabel("{} {:2.0f}% {}".format(class_names[predicted_label],100*np.max(predicted_label),class_names[true_label]),
+               color=color)
