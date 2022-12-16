@@ -110,3 +110,5 @@ plt.show()
 #użycie wyszkolonego modelu
 img =test_images[1]
 print(img.shape)
+img = (np.expand_dims(img,0))
+print(img.shape)
