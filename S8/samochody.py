@@ -47,3 +47,7 @@ with np.printoptions(precision=2, suppress=True):
     print(f'Pierwszy element - {first}\n')
     print(f'Znormalizowany: {normalizer(first).numpy()}')
 
+#regresja liniowa z jedną zmienną
+horsepower = np.array(train_features['Horsepower'])
+horspower_normalizer = layers.Normalization(input_shape=[1,],axis=None)
+horspower_normalizer.adapt(horsepower)
