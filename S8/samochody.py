@@ -58,3 +58,4 @@ horsepower_model = tf.keras.Sequential([
 ])
 
 horsepower_model.summary()
+horsepower_model.predict(horsepower[:10])
