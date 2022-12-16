@@ -28,3 +28,4 @@ dataset.tail()
 
 train_dataset = dataset.sample(frac=0.8, random_state=0)
 test_dataset = dataset.drop(train_dataset.index)
+sns.pairplot(train_dataset[['MPG','Cylinders','Displacement','Weight']],diag_kind='kde')
