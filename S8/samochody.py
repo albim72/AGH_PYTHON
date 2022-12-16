@@ -25,3 +25,6 @@ dataset = dataset.dropna()
 dataset['Origin'] = dataset['Origin'].map({1:'USA',2:'Europe',3:"Japan"})
 dataset = pd.get_dummies(dataset,columns=['Origin'], prefix = '',prefix_sep='')
 dataset.tail()
+
+train_dataset = dataset.sample(frac=0.8, random_state=0)
+test_dataset = dataset.drop(train_dataset.index)
