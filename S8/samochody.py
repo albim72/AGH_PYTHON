@@ -14,3 +14,6 @@ url = "https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-m
 column_names = ['MPG','Cylinders','Displacement','Horsepower','Weight','Acceleration','Model Year','Origin']
 
 raw_dataset = pd.read_csv(url,names=column_names,na_values="?",comment="\t", sep=" ",skipinitialspace=True)
+
+dataset = raw_dataset.copy()
+dataset.tail()
