@@ -115,3 +115,8 @@ print(img.shape)
 
 predictions_simple = probability_model(img)
 print(predictions_simple)
+plot_value_array(1,predictions_simple[0],test_labels)
+_ = plt.xticks(range(10), class_names,rotation=45)
+plt.show()
+
+np.argmax(predictions_simple[0])
