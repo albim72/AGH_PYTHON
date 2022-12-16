@@ -21,3 +21,7 @@ y_pred = classifier.predict(X_test)
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test,y_pred)
 print(cm)
+
+from sklearn.metrics import classification_report
+target_names = ['Iris-setosa','Iris-versicolor','Iris-virginica']
+print(classification_report(y_test,y_pred, target_names=target_names))
