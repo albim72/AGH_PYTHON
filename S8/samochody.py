@@ -63,3 +63,11 @@ horsepower_model.compile(
     optimizer = tf.optimizers.Adam(learning_rate=0.1),
     loss = 'mean_absolute_error'
 )
+%%time
+history = horsepower_model.fit(
+    train_features['Horsepower'],
+    train_labels,
+    epochs=100,
+    verbose=0,
+    validation_split = 0.2
+)
