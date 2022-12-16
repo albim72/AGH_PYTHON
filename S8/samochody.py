@@ -51,3 +51,10 @@ with np.printoptions(precision=2, suppress=True):
 horsepower = np.array(train_features['Horsepower'])
 horspower_normalizer = layers.Normalization(input_shape=[1,],axis=None)
 horspower_normalizer.adapt(horsepower)
+
+horsepower_model = tf.keras.Sequential([
+    horspower_normalizer,
+    layers.Dense(units=1)
+])
+
+horsepower_model.summary()
