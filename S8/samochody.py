@@ -37,3 +37,6 @@ train_labels = train_dataset.pop('MPG')
 test_labels = test_dataset.pop('MPG')
 
 normalizer = tf.keras.layers.Normalization(axis=-1)
+
+normalizer.adapt(np.array(train_features))
+print(normalizer.mean.numpy())
