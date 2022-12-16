@@ -107,3 +107,6 @@ for i in range(num_images):
     plot_value_array(i, predictions[i], test_labels)
 plt.tight_layout()
 plt.show()
+#użycie wyszkolonego modelu
+img =test_images[1]
+print(img.shape)
