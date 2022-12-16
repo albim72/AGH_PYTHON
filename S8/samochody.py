@@ -108,3 +108,4 @@ linear_model = tf.keras.Sequential([
 ])
 
 linear_model.predict(train_features[:10])
+linear_model.layers[1].kernel
