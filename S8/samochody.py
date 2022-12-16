@@ -82,3 +82,4 @@ def plot_loss(history):
     plt.ylabel('Error[MPG]')
     plt.legend()
     plt.grid(True)
+plot_loss(history)
