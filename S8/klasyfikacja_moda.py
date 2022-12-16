@@ -9,3 +9,9 @@ class_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt
 train_images.shape
 len(train_labels)
 test_images.shape
+
+plt.figure()
+plt.imshow(train_images[0])
+plt.colorbar()
+plt.grid(False)
+plt.show()
