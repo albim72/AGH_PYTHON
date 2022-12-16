@@ -113,3 +113,18 @@ linear_model.compile(
     optimizer = tf.optimizers.Adam(learning_rate=0.1),
     loss = 'mean_absolute_error'
 )
+
+
+#regresja z głęboką siecią neuronową
+def build_and_compile(norm):
+    model = tf.keras.Sequential([
+        norm,
+        layers.Dense(64,activation='relu'),
+        layers.Dense(64,activation='relu'),
+        layers.Dense(1)
+    ])
+    model.compile(
+        optimizer = tf.optimizers.Adam(learning_rate=0.001),
+        loss = 'mean_absolute_error'
+    )
+    return model
