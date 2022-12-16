@@ -40,3 +40,10 @@ normalizer = tf.keras.layers.Normalization(axis=-1)
 
 normalizer.adapt(np.array(train_features))
 print(normalizer.mean.numpy())
+
+first = np.array(train_features[:1])
+
+with np.printoptions(precision=2, suppress=True):
+    print(f'Pierwszy element - {first}\n')
+    print(f'Znormalizowany: {normalizer(first).numpy()}')
+
