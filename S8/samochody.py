@@ -83,3 +83,9 @@ def plot_loss(history):
     plt.legend()
     plt.grid(True)
 plot_loss(history)
+test_results = {}
+
+test_results['horsepower_model'] = horsepower_model.evaluate(
+    test_features['Horsepower'],
+    test_labels,verbose=0
+)
