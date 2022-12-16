@@ -48,3 +48,6 @@ print(f"\ndokładność modelu: {test_acc}")
 probability_model = tf.keras.Sequential([model,tf.keras.layers.Softmax()])
 predictions = probability_model.predict(test_images)
 predictions[0]
+
+np.argmax(predictions[0])
+test_labels[0]
