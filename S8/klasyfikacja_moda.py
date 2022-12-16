@@ -35,3 +35,7 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(128,activation='relu'),
     tf.keras.layers.Dense(10)
 ])
+
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
