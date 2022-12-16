@@ -130,3 +130,12 @@ def build_and_compile(norm):
     return model
 dnn_hp_model = build_and_compile(horspower_normalizer)
 dnn_hp_model.summary()
+
+%%time
+history = dnn_hp_model.fit(
+    train_features['Horsepower'],
+    train_labels,
+    epochs=100,
+    verbose=0,
+    validation_split = 0.2
+)
