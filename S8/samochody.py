@@ -17,3 +17,5 @@ raw_dataset = pd.read_csv(url,names=column_names,na_values="?",comment="\t", sep
 
 dataset = raw_dataset.copy()
 dataset.tail()
+
+dataset.isna().sum()
