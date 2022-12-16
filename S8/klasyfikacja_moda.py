@@ -112,3 +112,6 @@ img =test_images[1]
 print(img.shape)
 img = (np.expand_dims(img,0))
 print(img.shape)
+
+predictions_simple = probability_model(img)
+print(predictions_simple)
