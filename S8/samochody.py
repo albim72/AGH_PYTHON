@@ -74,3 +74,11 @@ history = horsepower_model.fit(
 hist = pd.DataFrame(history.history)
 hist['epoch'] = history.epoch
 hist.tail()
+def plot_loss(history):
+    plt.plot(history.history['loss'],label='loss')
+    plt.plot(history.history['val_loss'],label='val_loss')
+    plt.ylim([0,10])
+    plt.xlabel('Epoch')
+    plt.ylabel('Error[MPG]')
+    plt.legend()
+    plt.grid(True)
