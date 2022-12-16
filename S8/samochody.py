@@ -89,3 +89,5 @@ test_results['horsepower_model'] = horsepower_model.evaluate(
     test_features['Horsepower'],
     test_labels,verbose=0
 )
+x = tf.linspace(0.0,250,251)
+y = horsepower_model.predict(x)
