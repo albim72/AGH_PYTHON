@@ -101,4 +101,10 @@ def plot_horsepower(x,y):
     
 plot_horsepower(x,y)
 
+#regrsja liniowe z wieloma danymi wyjściowymi
+linear_model = tf.keras.Sequential([
+    normalizer,
+    layers.Dense(units=1)
+])
 
+linear_model.predict(train_features[:10])
