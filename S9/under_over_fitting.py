@@ -108,3 +108,9 @@ size_histories['Tiny'] = compile_and_fit(tiny_model,'sizes/Tiny')
 plotter = tfdocs.plots.HistoryPlotter(metric = 'binary_crossentropy', smoothing_std = 10)
 plotter.plot(size_histories)
 plt.ylim([0.5,0.7])
+
+small_model = tf.keras.Sequential([
+    layers.Dense(16,activation='elu',input_shape=(FEATURES,)),
+    layers.Dense(16,activation='elu'),
+    layers.Dense(1)
+])
