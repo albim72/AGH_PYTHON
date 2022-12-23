@@ -48,3 +48,13 @@ train_ds = packed_ds.skip(N_VALIDATION).take(N_TRAIN).cache()
 
 validate_ds = validate_ds.batch(BATCH_SIZE)
 train_ds = train_ds.shuffle(BUFFER_SIZE).repeat().batch(BATCH_SIZE)
+
+lr_schedule = tf.keras.optimizers.schedules.InverseTimeDecay(
+    0.001,
+    decay_steps = STEP_PER_EPOCHS*1000,
+    decay_rate = 1,
+    staircase = False
+)
+
+def get_optimizer():
+  return tf.keras.optimizer.Adam(lr_schedule)
