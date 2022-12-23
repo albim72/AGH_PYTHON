@@ -45,3 +45,6 @@ STEP_PER_EPOCHS = N_TRAIN/BATCH_SIZE
 
 validate_ds = packed_ds.take(N_VALIDATION).cache()
 train_ds = packed_ds.skip(N_VALIDATION).take(N_TRAIN).cache()
+
+validate_ds = validate_ds.batch(BATCH_SIZE)
+train_ds = train_ds.shuffle(BUFFER_SIZE).repeat().batch(BATCH_SIZE)
