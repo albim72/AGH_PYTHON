@@ -23,3 +23,14 @@ with open(sample_file) as f:
     print(f.read())
 remove_dir = os.path.join(train_dir,'unsup')
 shutil.rmtree(remove_dir)
+
+batch_size = 32
+seed = 42
+
+raw_train_ds = tf.keras.utils.text_dataset_from_directory(
+    'aclImdb/train',
+    batch_size=batch_size,
+    validation_split = 0.2,
+    subset = 'training',
+    seed= seed
+)
