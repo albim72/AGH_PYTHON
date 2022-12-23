@@ -41,3 +41,11 @@ for text_batch, label_batch in raw_train_ds.take(1):
     print("Etykieta",label_batch.numpy()[i])
 print("Etykieta 0 oznacza recenzję: ", raw_train_ds.class_names[0])
 print("Etykieta 1 oznacza recenzję: ", raw_train_ds.class_names[1])
+
+raw_val_ds = tf.keras.utils.text_dataset_from_directory(
+    'aclImdb/train',
+    batch_size=batch_size,
+    validation_split = 0.2,
+    subset = 'validation',
+    seed= seed
+)
