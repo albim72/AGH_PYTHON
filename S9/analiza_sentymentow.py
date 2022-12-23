@@ -157,3 +157,20 @@ plt.xlabel('Epoka')
 plt.ylabel('Dokładność')
 plt.legend(loc='lower right')
 plt.show()
+
+#Eksporotowanie modelu
+
+export_model = tf.keras.Sequential([
+    vectorize_layer,
+    model,
+    layers.Activation('sigmoid')
+])
+
+export_model.compile(
+    loss = losses.BinaryCrossentropy(from_logits=False),
+    optimizer = 'adam',
+    metrics = ['accuracy']
+)
+
+loss, accuracy = export_model.evaluate(raw_test_ds)
+print(accuracy)
