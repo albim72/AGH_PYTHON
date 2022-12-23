@@ -24,3 +24,8 @@ gz = tf.keras.utils.get_file('HIGGS.csv.gz','http://mlphysics.ics.uci.edu/data/h
 
 FEATURES = 28
 ds = tf.data.experimental.CsvDataset(gz,[float(),]*(FEATURES+1),compression_type="GZIP")
+
+def pack_row(*row):
+  label = row[0]
+  features = tf.stack(row[1:],1)
+  return features,label
