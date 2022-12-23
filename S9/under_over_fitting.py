@@ -136,3 +136,17 @@ shutil.copytree(logdir/'sizes/Tiny',logdir/'regularizers/Tiny')
 
 regularizers_histories = {}
 regularizers_histories['Tiny'] = size_histories['Tiny']
+
+
+l2_model = tf.keras.Sequential([
+    layers.Dense(512,activation='elu',kernel_regularizer=regularizers.l2(0.001), input_shape=(FEATURES,)),
+    layers.Dense(512,activation='elu',kernel_regularizer=regularizers.l2(0.001)),
+    layers.Dense(512,activation='elu',kernel_regularizer=regularizers.l2(0.001)),
+    layers.Dense(512,activation='elu',kernel_regularizer=regularizers.l2(0.001)),
+    layers.Dense(1)
+])
+
+regularizers_histories['l2'] = compile_and_fit(l2_model,"regularizers/l2")
+
+plotter.plot(regularizers_histories)
+plt.ylim([0.5,0.7])
