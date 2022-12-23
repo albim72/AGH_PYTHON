@@ -29,3 +29,5 @@ def pack_row(*row):
   label = row[0]
   features = tf.stack(row[1:],1)
   return features,label
+
+packed_ds = ds.batch(10000).map(pack_row).unbatch()
