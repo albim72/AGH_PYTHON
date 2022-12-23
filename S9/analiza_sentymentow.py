@@ -101,3 +101,16 @@ AUTOTUNE = tf.data.AUTOTUNE
 train_ds = train_ds.cache().prefetch(buffer_size = AUTOTUNE)
 val_ds = val_ds.cache().prefetch(buffer_size = AUTOTUNE)
 test_ds = test_ds.cache().prefetch(buffer_size = AUTOTUNE)
+
+#tworzenie modelu sieci neuronowej
+
+embedding_dim = 16
+model = tf.keras.Sequential([
+    layers.Embedding(max_features+1,embedding_dim),
+    layers.Dropout(0.2),
+    layers.GlobalAveragePooling1D(),
+    layers.Dropout(0.2),
+    layers.Dense(1)
+])
+
+model.summary()
