@@ -126,3 +126,8 @@ history = model.fit(
     validation_data = val_ds,
     epochs = epochs
 )
+
+#ocena modelu
+loss, accuracy = model.evaluate(test_ds)
+print("Strata:",loss)
+print("Dokładność:",accuracy)
