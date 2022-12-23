@@ -90,3 +90,7 @@ print("Recenzja zwektoryzowana: ", vectorize_text(first_review,first_label))
 print("1287 --> ",vectorize_layer.get_vocabulary()[1287])
 print("313 --> ",vectorize_layer.get_vocabulary()[313])
 print('Rozmiar słownik: {}'.format(len(vectorize_layer.get_vocabulary())))
+
+train_ds = raw_train_ds.map(vectorize_text)
+val_ds = raw_val_ds.map(vectorize_text)
+test_ds = raw_test_ds.map(vectorize_text)
