@@ -150,3 +150,17 @@ regularizers_histories['l2'] = compile_and_fit(l2_model,"regularizers/l2")
 
 plotter.plot(regularizers_histories)
 plt.ylim([0.5,0.7])
+
+l2_model = tf.keras.Sequential([
+    layers.Dense(512,activation='elu',kernel_regularizer=regularizers.l2(0.001), input_shape=(FEATURES,)),
+    layers.Dropout(0.5),
+    layers.Dense(512,activation='elu',kernel_regularizer=regularizers.l2(0.001)),
+    layers.Dropout(0.5),
+    layers.Dense(512,activation='elu',kernel_regularizer=regularizers.l2(0.001)),
+    layers.Dropout(0.5),
+    layers.Dense(512,activation='elu',kernel_regularizer=regularizers.l2(0.001)),
+    layers.Dropout(0.5),
+    layers.Dense(1)
+])
+
+regularizers_histories['l2'] = compile_and_fit(l2_model,"regularizers/l2")
