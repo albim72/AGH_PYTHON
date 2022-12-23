@@ -53,3 +53,4 @@ raw_test_ds = tf.keras.utils.text_dataset_from_directory(
     'aclImdb/test',
     batch_size=batch_size
 )
+#Przygotowanie zbioru danycb do szkolenia. Standaryzcja, tokenizacja i wektoryzacja.
