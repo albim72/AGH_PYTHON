@@ -130,3 +130,6 @@ large_model = tf.keras.Sequential([
     layers.Dense(512,activation='elu'),
     layers.Dense(1)
 ])
+
+shutil.rmtree(logdir/'regularizers/Tiny', ignore_errors=True)
+shutil.copytree(logdir/'sizes/Tiny',logdir/'regularizers/Tiny')
