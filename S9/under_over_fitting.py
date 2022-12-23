@@ -73,3 +73,25 @@ def get_callbacks(name):
       tf.keras.callbacks.EarlyStopping(monitor='val_binary_crossentropy', patience=200),
       tf.keras.callbacks.TensorBoard(logdir/name),
   ]
+def compile_and_fit(model, name, optimizer=None, max_epochs = 10000):
+  if optimizer is None:
+    optimizer = get_optimizer()
+  model.compile(optimizer=optimizer,
+                loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
+                metrics =[
+                    tf.keras.losses.BinaryCrossentropy(
+                        from_logits = True, name='binary_crossentropy'),
+                        'accuracy'
+                    
+                ])
+  model.summary()
+
+  history = model.fit(
+      train_ds,
+      steps_per_epoch = STEP_PER_EPOCHS,
+      epochs = max_epochs,
+      valaidation_data = validate_ds,
+      callbacks = get_callbacks(name),
+      verbose = 0
+  )
+  return history
