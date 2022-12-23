@@ -15,3 +15,7 @@ import numpy as np
 import pathlib
 import shutil
 import tempfile
+
+
+logdir = pathlib.Path(tempfile.mkdtemp())/"tensorboard_logs"
+shutil.rmtree(logdir, ignore_errors=True)
