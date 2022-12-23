@@ -5,12 +5,12 @@ from tensorflow.keras import regularizers
 !pip install git+https://github.com/tensorflow/docs
 
 import tensorflow_docs as tfdocs
-import tensorflow_docs.modelling
+import tensorflow_docs.modeling
 import tensorflow_docs.plots
 
 
 from IPython import display
-from matplotlib impoer pyplot as plt
+from matplotlib import pyplot as plt
 import numpy as np
 import pathlib
 import shutil
