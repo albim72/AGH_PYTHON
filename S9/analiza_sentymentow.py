@@ -75,3 +75,7 @@ vectorize_layer = layers.TextVectorization(
 )
 train_text = raw_train_ds.map(lambda x,y:x)
 vectorize_layer.adapt(train_text)
+
+def vectorize_text(text,label):
+  text = tf.expand_dims(text,-1)
+  return  vectorize_layer(text), label
