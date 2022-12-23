@@ -131,6 +131,16 @@ large_model = tf.keras.Sequential([
     layers.Dense(1)
 ])
 
+
+plotter.plot(size_histories)
+a = plt.xscale('log')
+plt.xlim([5,max(plt.xlim())])
+plt.ylim([0.5,0.7])
+plt.xlabel("Epoki[Skala logarytmiczna]")
+plt.ylabel("Binary CrossEntropy")
+plt.show()
+
+
 shutil.rmtree(logdir/'regularizers/Tiny', ignore_errors=True)
 shutil.copytree(logdir/'sizes/Tiny',logdir/'regularizers/Tiny')
 
