@@ -133,3 +133,6 @@ large_model = tf.keras.Sequential([
 
 shutil.rmtree(logdir/'regularizers/Tiny', ignore_errors=True)
 shutil.copytree(logdir/'sizes/Tiny',logdir/'regularizers/Tiny')
+
+regularizers_histories = {}
+regularizers_histories['Tiny'] = size_histories['Tiny']
