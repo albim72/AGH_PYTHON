@@ -54,3 +54,9 @@ raw_test_ds = tf.keras.utils.text_dataset_from_directory(
     batch_size=batch_size
 )
 #Przygotowanie zbioru danycb do szkolenia. Standaryzcja, tokenizacja i wektoryzacja.
+
+from tensorflow._api.v2.strings import lower
+def custom_standarization(input_data):
+  lowercase = tf.strings.lower(input_data)
+  stripped_html = tf.strings.regex_replace(lowercase,'<br />',' ')
+  return tf.strings.regex_replace(stripped_html,'[%s]' %re.escape(string.punctuation),'')
