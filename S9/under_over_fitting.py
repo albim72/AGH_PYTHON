@@ -122,3 +122,11 @@ medium_model = tf.keras.Sequential([
     layers.Dense(64,activation='elu'),
     layers.Dense(1)
 ])
+
+large_model = tf.keras.Sequential([
+    layers.Dense(512,activation='elu',input_shape=(FEATURES,)),
+    layers.Dense(512,activation='elu'),
+    layers.Dense(512,activation='elu'),
+    layers.Dense(512,activation='elu'),
+    layers.Dense(1)
+])
