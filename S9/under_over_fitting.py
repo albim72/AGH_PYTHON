@@ -58,3 +58,10 @@ lr_schedule = tf.keras.optimizers.schedules.InverseTimeDecay(
 
 def get_optimizer():
   return tf.keras.optimizer.Adam(lr_schedule)
+
+step = np.linspace(0,100000)
+lr = lr_schedule(step)
+plt.figure(figsize=(8,6))
+plt.plot(step/STEP_PER_EPOCHS,lr)
+plt.ylim([0,max(plt.ylim())])
+plt.xlabel('Learning Rate')
