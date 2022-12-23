@@ -73,3 +73,5 @@ vectorize_layer = layers.TextVectorization(
     output_mode = 'int',
     output_sequence_length = sequence_length
 )
+train_text = raw_train_ds.map(lambda x,y:x)
+vectorize_layer.adapt(train_text)
