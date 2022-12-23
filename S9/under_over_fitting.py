@@ -65,3 +65,11 @@ plt.figure(figsize=(8,6))
 plt.plot(step/STEP_PER_EPOCHS,lr)
 plt.ylim([0,max(plt.ylim())])
 plt.xlabel('Learning Rate')
+
+
+def get_callbacks(name):
+  return[
+      tfdocs.modeling.EpochDots(),
+      tf.keras.callbacks.EarlyStopping(monitor='val_binary_crossentropy', patience=200),
+      tf.keras.callbacks.TensorBoard(logdir/name),
+  ]
