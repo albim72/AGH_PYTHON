@@ -95,3 +95,10 @@ def compile_and_fit(model, name, optimizer=None, max_epochs = 10000):
       verbose = 0
   )
   return history
+
+#maly model /tiny/
+
+tiny_model = tf.keras.Sequential([
+    layers.Dense(16,activation='elu',input_shape=(FEATURES,)),
+    layers.Dense(1)
+])
