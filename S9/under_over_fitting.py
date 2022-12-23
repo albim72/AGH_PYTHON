@@ -55,9 +55,8 @@ lr_schedule = tf.keras.optimizers.schedules.InverseTimeDecay(
     decay_rate = 1,
     staircase = False
 )
-
 def get_optimizer():
-  return tf.keras.optimizer.Adam(lr_schedule)
+  return tf.keras.optimizers.Adam(lr_schedule)
 
 step = np.linspace(0,100000)
 lr = lr_schedule(step)
@@ -86,11 +85,11 @@ def compile_and_fit(model, name, optimizer=None, max_epochs = 10000):
                 ])
   model.summary()
 
-  history = model.fit(
+ history = model.fit(
       train_ds,
       steps_per_epoch = STEP_PER_EPOCHS,
       epochs = max_epochs,
-      valaidation_data = validate_ds,
+      validation_data = validate_ds,
       callbacks = get_callbacks(name),
       verbose = 0
   )
@@ -102,3 +101,6 @@ tiny_model = tf.keras.Sequential([
     layers.Dense(16,activation='elu',input_shape=(FEATURES,)),
     layers.Dense(1)
 ])
+
+size_histories = {}
+size_histories['Tiny'] = compile_and_fit(tiny_model,'sizes/Tiny')
