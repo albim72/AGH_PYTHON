@@ -174,3 +174,16 @@ export_model.compile(
 
 loss, accuracy = export_model.evaluate(raw_test_ds)
 print(accuracy)
+
+
+examples = [
+    "The movie was great!",
+    "The movie was okay",
+    "The movie was terrible",
+    "Beautiful disaster!",
+    "Big Shit!",
+    "Fatalnie nakręcony film...",
+    "Very nice"
+]
+
+export_model.predict(examples)
