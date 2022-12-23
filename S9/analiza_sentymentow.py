@@ -85,3 +85,8 @@ first_review, first_label = text_batch[0], label_batch[0]
 print("Recenzja: ",first_review)
 print("Etykieta: ",raw_train_ds.class_names[first_label])
 print("Recenzja zwektoryzowana: ", vectorize_text(first_review,first_label))
+
+
+print("1287 --> ",vectorize_layer.get_vocabulary()[1287])
+print("313 --> ",vectorize_layer.get_vocabulary()[313])
+print('Rozmiar słownik: {}'.format(len(vectorize_layer.get_vocabulary())))
