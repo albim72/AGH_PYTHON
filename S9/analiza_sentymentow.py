@@ -131,3 +131,5 @@ history = model.fit(
 loss, accuracy = model.evaluate(test_ds)
 print("Strata:",loss)
 print("Dokładność:",accuracy)
+history_dict = history.history
+history_dict.keys()
