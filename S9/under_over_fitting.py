@@ -164,3 +164,5 @@ l2_model = tf.keras.Sequential([
 ])
 
 regularizers_histories['l2'] = compile_and_fit(l2_model,"regularizers/l2")
+plotter.plot(regularizers_histories)
+plt.ylim([0.5,0.7])
