@@ -36,7 +36,7 @@ for features, label in packed_ds.batch(1000).take(1):
   print(features[0])
   plt.hist(features.numpy().flatten(), bins=101)
 
-  N_VALIDATION = int(1e3)
+N_VALIDATION = int(1e3)
 N_TRAIN = int(1e4)
 BUFFER_SIZE = int(1e4)
 BATCH_SIZE =  500
