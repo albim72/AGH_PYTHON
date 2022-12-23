@@ -133,3 +133,19 @@ print("Strata:",loss)
 print("Dokładność:",accuracy)
 history_dict = history.history
 history_dict.keys()
+
+
+acc = history_dict['binary_accuracy']
+val_acc = history_dict['val_binary_accuracy']
+loss = history_dict['loss']
+val_loss = history_dict['val_loss']
+
+epochs = range(1,len(acc)+1)
+
+plt.plot(epochs,loss,'bo',label='Training loss')
+plt.plot(epochs,val_loss,'b',label='Validation loss')
+plt.title('Strata dla treningu i walidacji')
+plt.xlabel('Epoka')
+plt.ylabel('Strata')
+plt.legend()
+plt.show()
