@@ -21,3 +21,5 @@ os.listdir(train_dir)
 sample_file = os.path.join(train_dir,'pos/1181_9.txt')
 with open(sample_file) as f:
     print(f.read())
+remove_dir = os.path.join(train_dir,'unsup')
+shutil.rmtree(remove_dir)
