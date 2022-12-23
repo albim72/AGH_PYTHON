@@ -41,3 +41,7 @@ N_TRAIN = int(1e4)
 BUFFER_SIZE = int(1e4)
 BATCH_SIZE =  500
 STEP_PER_EPOCHS = N_TRAIN/BATCH_SIZE
+
+
+validate_ds = packed_ds.take(N_VALIDATION).cache()
+train_ds = packed_ds.skip(N_VALIDATION).take(N_TRAIN).cache()
