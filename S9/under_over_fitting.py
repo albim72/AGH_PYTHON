@@ -114,3 +114,5 @@ small_model = tf.keras.Sequential([
     layers.Dense(16,activation='elu'),
     layers.Dense(1)
 ])
+
+size_histories['Small'] = compile_and_fit(small_model,'sizes/Small')
