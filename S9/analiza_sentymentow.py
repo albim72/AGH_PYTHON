@@ -119,3 +119,10 @@ model.summary()
 model.compile(loss=losses.BinaryCrossentropy(from_logits=True),
               optimizer='adam',
               metrics = tf.metrics.BinaryAccuracy(threshold=0.0))
+
+epochs = 10
+history = model.fit(
+    train_ds,
+    validation_data = val_ds,
+    epochs = epochs
+)
