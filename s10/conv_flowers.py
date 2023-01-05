@@ -19,3 +19,7 @@ print(image_count)
 
 roses = list(data_dir.glob('roses/*'))
 PIL.Image.open(str(roses[0]))
+
+
+tulips = list(data_dir.glob('tulips/*'))
+PIL.Image.open(str(tulips[1]))
