@@ -62,7 +62,7 @@ def distance(w,x):
 
 def findclosest(W,x):
     wm = W[0]
-    r = distance(wm,X)
+    r = distance(wm,x)
 
     i=0
     i_n = i
@@ -76,3 +76,16 @@ def findclosest(W,x):
     return (wm,i_n)
 
 print(W)
+
+la = 0.3 #współczynnik lamdba
+dla = 0.05 #delta lambda
+
+while la >=0:
+    for k in range(10):
+        for x in X:
+            wm = findclosest(W,x)[0]
+            for i in range(len(wm)):
+                wm[i] = wm[i] + la*(x[i]-wm[i])
+
+    la = la -dla
+
