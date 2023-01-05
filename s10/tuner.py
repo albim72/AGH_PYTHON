@@ -29,3 +29,7 @@ tuner = kt.Hyperband(model_builder,objective='val_accuracy',
                      directory='my_dir',
                      project_name = 'intro_to_kt')
 stop_early = tf.keras.callbacks.EarlyStopping(monitor='val_loss',patience=5)
+tuner.search(img_train,label_train,epochs=50,validation_split=0.2,callbacks=[stop_early])
+
+best_hps = tuner.get_best_hyperparameters(num_trials=1)[0]
+print(f"Szukanie hiperparametrów kompletne. optymalna liczba elementów: {best_hps.get('units')}, optymalna prędkość uczenia się: {best_hps.get('learning_rate')}")
