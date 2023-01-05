@@ -42,7 +42,7 @@ classifiers = [
     QuadraticDiscriminantAnalysis(),
 ]
 
-X,y = make_classification(n_features=2,n_informative=2,random_state=1,n_clusters_per_class=1)
+X,y = make_classification(n_features=2,n_redundant=0,n_informative=2, random_state=1,n_clusters_per_class=1)
 rng = np.random.RandomState(2)
 X+= 2*rng.uniform(size=X.shape)
 lineary_separable = (X,y)
@@ -83,7 +83,7 @@ for ds_cnt,ds in enumerate(datasets):
     #iteracja po klasyfikatorach
     for name,clf in zip(names,classifiers):
         ax = plt.subplot(len(datasets),len(classifiers)+1,i)
-        
+
         clf = make_pipeline(StandardScaler(),clf)
         clf.fit(X_train,y_train)
         score = clf.score(X_test,y_test)
@@ -98,7 +98,7 @@ for ds_cnt,ds in enumerate(datasets):
         ax.set_ylim(y_min, y_max)
         ax.set_xticks(())
         ax.set_yticks(())
-        
+
         if ds_cnt == 0:
             ax.set_title(name)
         ax.text(
@@ -109,7 +109,6 @@ for ds_cnt,ds in enumerate(datasets):
             horizontalalignment = "right",
         )
         i+=1
-        
+
 plt.tight_layout()
 plt.show()
-        
