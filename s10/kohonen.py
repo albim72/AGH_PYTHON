@@ -89,3 +89,19 @@ while la >=0:
 
     la = la -dla
 
+Data = list()
+
+for i in range(len(W)):
+    Data.append(list())
+
+dfList = ds['class']
+
+DS = list()
+i=0
+for x in X:
+    i_n = findclosest(W,x)[1]
+    Data[i_n].append(x)
+    DS.append([i_n,dfList[i]])
+    i = i+1
+
+print(DS)
