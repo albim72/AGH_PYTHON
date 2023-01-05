@@ -25,3 +25,20 @@ pca = make_pipeline(StandardScaler(),PCA(n_components=2,random_state=random_stat
 lda = make_pipeline(StandardScaler(), LinearDiscriminantAnalysis(n_components=2))
 
 nca = make_pipeline(StandardScaler(), NeighborhoodComponentsAnalysis(n_components=2,random_state=random_state))
+
+knn = KNeighborsClassifier(n_neighbors=n_neighbours)
+dim_reduction_methods = [("PCA",pca),("LDA",lda),("NCA",nca)]
+#wykres
+
+for i, (name,model) in enumerate(dim_reduction_methods):
+    model.fit(X_train,y_train)
+    knn.fit(model.transform(X_train),y_train)
+
+    acc_knn = knn.score(model.transform(X_test),y_test)
+
+    X_embedded = model.transform(X)
+
+    plt.scatter(X_embedded[:,0], X_embedded[:,1], c=y,s=30,cmap="Set1")
+    plt.title("{}, KNN (k={})\nTest accuracy = {:.2f}".format(name,n_neighbours,acc_knn))
+plt.show()
+
