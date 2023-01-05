@@ -121,4 +121,18 @@ plt.legend(loc='upper right')
 plt.title=('training and validation loss')
 
 plt.show()
+data_augmentation = keras.Sequential(
+    [
+        layers.RandomFlip('horizontal',input_shape=(img_height, img_width,3)),
+        layers.RandomRotation(0.1),
+        layers.RandomZoom(0.1)
+    ]
+)
 
+plt.figure(figsize=(10,10))
+for images, _ in train_ds.take(1):
+  for i in range(9):
+    augmented_images = data_augmentation(images)
+    ax = plt.subplot(3,3,i+1)
+    plt.imshow(augmented_images[0].numpy().astype("uint8"))
+    plt.axis("off")
