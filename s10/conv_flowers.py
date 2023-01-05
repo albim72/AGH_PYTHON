@@ -45,3 +45,5 @@ val_ds = tf.keras.utils.image_dataset_from_directory(
     image_size = (img_height, img_width),
     batch_size=batch_size
 )
+class_names = train_ds.class_names
+print(class_names)
