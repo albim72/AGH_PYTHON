@@ -23,3 +23,8 @@ def model_builder(hp):
                 metrics=['accuracy'])
   return model
 
+tuner = kt.Hyperband(model_builder,objective='val_accuracy',
+                     max_epochs = 10,
+                     factor=3,
+                     directory='my_dir',
+                     project_name = 'intro_to_kt')
