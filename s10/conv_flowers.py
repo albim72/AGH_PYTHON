@@ -62,3 +62,8 @@ for image_batch, labels_batch in train_ds:
   print(image_batch.shape)
   print(labels_batch.shape)
   break
+#konfiguracja zbioru pod kątem wydajności
+AUTOTUNE = tf.data.AUTOTUNE
+
+train_ds = train_ds.cache().shuffle(1000).prefetch(buffer_size=AUTOTUNE)
+val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)
