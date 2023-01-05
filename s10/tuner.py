@@ -28,3 +28,4 @@ tuner = kt.Hyperband(model_builder,objective='val_accuracy',
                      factor=3,
                      directory='my_dir',
                      project_name = 'intro_to_kt')
+stop_early = tf.keras.callbacks.EarlyStopping(monitor='val_loss',patience=5)
