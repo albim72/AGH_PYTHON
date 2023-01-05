@@ -32,3 +32,20 @@ for pw in ds['petal width']:
     list_pw.append(pw)
 
 X = np.array(list(zip(list_sl,list_sw,list_pl,list_pw)))
+
+#inicjacja zestawu wartości opsujących sieć
+
+nc = 3 #liczba klas (gatunków irysów)
+W = [] #lista wektorów w
+M = len(X) #liczba wektorów x
+N = len(X[0]) #rozmiar wektorów x
+
+
+def get_weights():
+    y = np.random.random()*(2.0/np.sqrt(M))
+    return 0.5-(1/np.sqrt(M))+y
+
+for i in range(nc):
+    W.append(list())
+    for j in range(N):
+        W[i].append(get_weights()*0.5)
