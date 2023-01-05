@@ -52,3 +52,30 @@ datasets = [
     make_circles(noise=0.2,factor=0.5,random_state=1),
     lineary_separable
 ]
+
+figure = plt.figure(figsize=(27,9))
+i=1
+
+for ds_cnt,ds in enumerate(datasets):
+    X,y = ds
+    X_train, X_test,y_train,y_test = train_test_split(X,y,test_size=0.4,random_state=42)
+    x_min, x_max = X[:,0].min() - 0.5, X[:,0].max() + 0.5
+    y_min, y_max = X[:,1].min() - 0.5, X[:,1].max() + 0.5
+
+    #rysowanie czystych zbiorów danych
+    cm = plt.cm.RdBu
+    cm_bright = ListedColormap(["#FF0000","#0000FF"])
+    ax = plt.subplot(len(datasets),len(classifiers)+1,i)
+    if ds_cnt == 0:
+        ax.set_title("Input data")
+    #rysowanie punktów treningowych
+    ax.scatter(X_train[:,0],X_train[:,1],c=y_train,cmap=cm_bright,edgecolor="k")
+    
+    #rysowanie punktów testowych
+    ax.scatter(X_test[:, 0], X_test[:, 1], c=y_test, cmap=cm_bright, alpha=0.6, edgecolor="k")
+    
+    ax.set_xlim(x_min, x_max)
+    ax.set_ylim(y_min, y_max)
+    ax.set_xticks(())
+    ax.set_yticks(())
+    i+=1
