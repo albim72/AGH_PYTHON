@@ -85,3 +85,9 @@ model = create_model()
 model.load_weights('./checkpoints/my_chceckpoint')
 loss, acc = model.evaluate(test_images,test_labels,verbose=2)
 print(f"model niewytrenowoany:accuracy {(100*acc):5.2f}")
+
+model = create_model()
+model.fit(train_images,train_labels,epochs=5)
+
+!mkdir -p saved_model
+model.save('saved_model/my_model')
