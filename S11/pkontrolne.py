@@ -38,3 +38,11 @@ model.fit(train_images,
           validation_data = (test_images,test_labels),
           callbacks=[cp_callback])
 os.listdir(checkpoint_dir)
+
+model = create_model()
+loss, acc = model.evaluate(test_images,test_labels,verbose=2)
+print(f"model niewytrenowoany:accuracy {(100*acc):5.2f}")
+
+model.load_weights(checkpoint_path)
+loss, acc = model.evaluate(test_images,test_labels,verbose=2)
+print(f"model niewytrenowoany:accuracy {(100*acc):5.2f}")
