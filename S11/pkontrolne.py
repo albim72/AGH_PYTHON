@@ -46,3 +46,29 @@ print(f"model niewytrenowoany:accuracy {(100*acc):5.2f}")
 model.load_weights(checkpoint_path)
 loss, acc = model.evaluate(test_images,test_labels,verbose=2)
 print(f"model niewytrenowoany:accuracy {(100*acc):5.2f}")
+
+#opcje oddzwaniania do punktu kontrolnego
+
+checkpoint_path = 'training_2/cp-{epoch:04d}.ckpt'
+checkpoint_dir=os.path.dirname(checkpoint_path)
+
+batch_size = 32
+
+cp_callback = tf.keras.callbacks.ModelCheckpoint(
+    filepath = checkpoint_path,
+    verbose=1,
+    save_weights_only = True,
+    save_freq = 5*batch_size
+)
+
+model = create_model()
+model.save_weights(checkpoint_path.format(epoch=0))
+
+model.fit(train_images,
+          train_labels,
+          epochs=50,
+          batch_size=batch_size,
+          callbacks = [cp_callback],
+          validation_data=(test_images,test_labels),
+          verbose=0
+          )
