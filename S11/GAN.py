@@ -21,3 +21,5 @@ train_images = (train_images-127.5)/127.5
 
 BUFFER_SIZE = 60000
 BATCH_SIZE = 256
+
+train_dataset = tf.data.Dataset.from_tensor_slices(train_images).shuffle(BUFFER_SIZE).batch(BATCH_SIZE)
