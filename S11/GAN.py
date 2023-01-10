@@ -137,3 +137,13 @@ def train(dataset,epochs):
   generate_and_save_images(generator,
                              epochs,
                              seed)
+from traitlets.traitlets import ForwardDeclaredInstance
+def generate_and_save_images(model,epoch,test_input):
+  predictions=model(test_input,training=False)
+  fig = plt.figure(figsize=(4,4))
+  for i in range(predictions.shape[0]):
+    plt.subplot(4,4,i+1)
+    plt.imshow(predictions[i, :, :, 0]*127.5+127.5, cmap = 'gray')
+    plt.axis('off')
+  plt.savefig(f'image_at_epoch_{epoch:04d}.png')
+  plt.show()
