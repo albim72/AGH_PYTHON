@@ -83,3 +83,5 @@ def discriminator_loss(real_output,fake_output):
 
 def generator_loss(fake_output):
   return cross_entropy(tf.ones_like(fake_output),fake_output)
+generator_optimizer = tf.keras.optimizers.Adam(1e-4)
+discriminator_optimizer = tf.keras.optimizers.Adam(1e-4)
