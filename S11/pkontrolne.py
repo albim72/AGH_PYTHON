@@ -76,3 +76,12 @@ model.fit(train_images,
 os.listdir(checkpoint_dir)
 latest = tf.train.latest_checkpoint(checkpoint_dir)
 print(latest)
+#ręczne zapisywanie wag
+model.save_weights('./checkpoints/my_chceckpoint')
+
+#reset modelu i załadowanie najnowszego punktu kontrolnego
+
+model = create_model()
+model.load_weights('./checkpoints/my_chceckpoint')
+loss, acc = model.evaluate(test_images,test_labels,verbose=2)
+print(f"model niewytrenowoany:accuracy {(100*acc):5.2f}")
