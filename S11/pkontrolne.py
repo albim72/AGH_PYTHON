@@ -93,3 +93,7 @@ model.fit(train_images,train_labels,epochs=5)
 model.save('saved_model/my_model')
 !ls saved_model
 !ls saved_model/my_model
+
+new_model = tf.keras.models.load_model('saved_model/my_model')
+
+new_model.summary()
