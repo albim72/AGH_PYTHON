@@ -111,3 +111,7 @@ model = create_model()
 model.fit(train_images,train_labels,epochs=5)
 
 model.save('my_model.h5')
+
+new_model = tf.keras.models.load_model('my_model.h5')
+
+new_model.summary()
