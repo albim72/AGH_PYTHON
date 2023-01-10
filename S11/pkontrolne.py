@@ -73,3 +73,4 @@ model.fit(train_images,
           verbose=0
           )
 
+os.listdir(checkpoint_dir)
