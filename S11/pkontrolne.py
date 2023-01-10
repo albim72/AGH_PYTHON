@@ -74,3 +74,5 @@ model.fit(train_images,
           )
 
 os.listdir(checkpoint_dir)
+latest = tf.train.latest_checkpoint(checkpoint_dir)
+print(latest)
