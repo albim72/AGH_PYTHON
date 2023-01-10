@@ -72,3 +72,4 @@ model.fit(train_images,
           validation_data=(test_images,test_labels),
           verbose=0
           )
+
