@@ -91,3 +91,5 @@ model.fit(train_images,train_labels,epochs=5)
 
 !mkdir -p saved_model
 model.save('saved_model/my_model')
+!ls saved_model
+!ls saved_model/my_model
