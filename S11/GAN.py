@@ -115,3 +115,25 @@ def train_step(images):
 
   generator_optimizer.apply_gradients(zip(gradients_of_generator,generator.trainable_variables))
   generator_optimizer.apply_gradients(zip(gradients_of_discriminator,discriminator.trainable_variables))
+
+def train(dataset,epochs):
+  for epoch in range(epochs):
+    start = time.time()
+
+    for image_batch in dataset:
+      train_step(image_batch)
+
+    display.clear_output(wait=True)
+    generate_and_save_images(generator,
+                             epoch+1,
+                             seed)
+    
+    if (epoch+1)%15==0:
+      checkpoint.save(file_prefix=checkpoint_prefix)
+
+    print(f'Czas dla epoki {epoch+1} wynosi: {time.time()-start} s')
+
+  display.clear_output(wait=True)
+  generate_and_save_images(generator,
+                             epochs,
+                             seed)
