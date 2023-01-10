@@ -147,3 +147,5 @@ def generate_and_save_images(model,epoch,test_input):
     plt.axis('off')
   plt.savefig(f'image_at_epoch_{epoch:04d}.png')
   plt.show()
+  
+train(train_dataset,EPOCHS)
