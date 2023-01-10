@@ -24,3 +24,16 @@ def create_model():
 
 model = create_model()
 model.summary()
+#użycie wołania zwrotnego w punkcie kontrolnym (checkpoint)
+
+checkpoint_path = 'training_1/cp.ckpt'
+checkpoint_dir = os.path.dirname(checkpoint_path)
+
+cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
+                                                 save_weights_only=True,
+                                                 verbose=1)
+model.fit(train_images,
+          train_labels,
+          epochs=10,
+          validation_data = (test_images,test_labels),
+          callbacks=[cp_callback])
