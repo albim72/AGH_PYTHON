@@ -37,3 +37,4 @@ model.fit(train_images,
           epochs=10,
           validation_data = (test_images,test_labels),
           callbacks=[cp_callback])
+os.listdir(checkpoint_dir)
