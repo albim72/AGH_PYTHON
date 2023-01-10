@@ -97,3 +97,9 @@ model.save('saved_model/my_model')
 new_model = tf.keras.models.load_model('saved_model/my_model')
 
 new_model.summary()
+
+
+loss, acc = new_model.evaluate(test_images,test_labels,verbose=2)
+print(f"model odtworzony:accuracy {(100*acc):5.2f}")
+
+print(new_model.predict(test_images).shape)
