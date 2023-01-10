@@ -73,3 +73,5 @@ def make_discriminator_model():
 discriminator = make_discriminator_model()
 decision = discriminator(generated_image)
 print(decision)
+
+cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
