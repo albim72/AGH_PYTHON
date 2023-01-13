@@ -26,19 +26,28 @@ class Kalkulator(QWidget):
     def keyPressEvent(self, e) -> None:
         if e.key() == Qt.Key_Escape:
             self.close()
-
-
+            
+            
     def dzialanie(self):
         nadawca = self.sender()
         try:
             liczbaa = float(self.liczbaaEdit.text())
             liczbab = float(self.liczbabEdit.text())
             wynik = ""
-
+            
             if nadawca.text() == "&Dodaj":
                 wynik = liczbaa + liczbab
+            elif nadawca.text() == "&Odejmij":
+                wynik = liczbaa - liczbab
+            elif nadawca.text() == "&Mnóż":
+                wynik = liczbaa * liczbab
             else:
-                pass
+                try:
+                    wynik = round(liczbaa/liczbab,9)
+                except ZeroDivisionError:
+                    QMessageBox.critical(
+                        self,'Błąd',"Nie można dzielić przez 0!"
+                    )
             self.wynikEdit.setText(str(wynik))
         except ValueError:
             QMessageBox.warning(self,'Błąd','Błędne dane',QMessageBox.Ok)
@@ -89,7 +98,7 @@ class Kalkulator(QWidget):
         self.setLayout(ukladT)
 
         koniecBtn.clicked.connect(self.koniec)
-
+        
         dodajBtn.clicked.connect(self.dzialanie)
         odejmijBtn.clicked.connect(self.dzialanie)
         mnozBtn.clicked.connect(self.dzialanie)
