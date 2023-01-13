@@ -1,12 +1,16 @@
 from PyQt5.QtWidgets import QApplication,QWidget,QLabel,QGridLayout,\
-    QLineEdit,QPushButton,QHBoxLayout
+    QLineEdit,QPushButton,QHBoxLayout,QMessageBox
 from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import Qt
 import sys
 
 class Kalkulator(QWidget):
     def __init__(self,parent=None):
         super().__init__(parent)
         self.interfejs()
+
+    def koniec(self):
+        self.close()
 
     def interfejs(self):
 
@@ -49,8 +53,12 @@ class Kalkulator(QWidget):
         ukladT.addLayout(ukladH,2,0,1,3)
         ukladT.addWidget(koniecBtn,3,0,1,3)
 
+
         #przypisanie utworzonego układu do okna
         self.setLayout(ukladT)
+
+        koniecBtn.clicked.connect(self.koniec)
+
         self.setGeometry(20,20,300,100)
         self.setWindowIcon(QIcon('name.jpg'))
         self.setWindowTitle("Prosty kalkulator")
