@@ -1,4 +1,5 @@
-from PyQt5.QtWidgets import QApplication,QWidget,QLabel,QGridLayout
+from PyQt5.QtWidgets import QApplication,QWidget,QLabel,QGridLayout,\
+    QLineEdit,QPushButton,QHBoxLayout
 from PyQt5.QtGui import QIcon
 import sys
 
@@ -19,6 +20,34 @@ class Kalkulator(QWidget):
         ukladT.addWidget(etykieta1,0,0)
         ukladT.addWidget(etykieta2,0,1)
         ukladT.addWidget(etykieta3,0,2)
+
+        #1liniowe pola edycyjne
+        self.liczbaaEdit = QLineEdit()
+        self.liczbabEdit = QLineEdit()
+        self.wynikEdit = QLineEdit()
+
+        self.wynikEdit.readonly = True
+        self.wynikEdit.setToolTip('Wpisz <b>liczby</b> i wybierz działanie...')
+        ukladT.addWidget(self.liczbaaEdit,1,0)
+        ukladT.addWidget(self.liczbabEdit,1,1)
+        ukladT.addWidget(self.wynikEdit,1,2)
+
+        #przyciski
+        dodajBtn = QPushButton("&Dodaj",self)
+        odejmijBtn = QPushButton("&Odejmij",self)
+        dzielBtn = QPushButton("&Dziel",self)
+        mnozBtn = QPushButton("&Mnóż",self)
+        koniecBtn = QPushButton("&Koniec",self)
+        koniecBtn.resize(koniecBtn.sizeHint())
+
+        ukladH = QHBoxLayout()
+        ukladH.addWidget(dodajBtn)
+        ukladH.addWidget(odejmijBtn)
+        ukladH.addWidget(mnozBtn)
+        ukladH.addWidget(dzielBtn)
+
+        ukladT.addLayout(ukladH,2,0,1,3)
+        ukladT.addWidget(koniecBtn,3,0,1,3)
 
         #przypisanie utworzonego układu do okna
         self.setLayout(ukladT)
